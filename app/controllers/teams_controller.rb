@@ -29,6 +29,8 @@ class TeamsController < ApplicationController
     end
   end
 
+  
+
   def update
     if @team.update(team_params)
       redirect_to @team, notice: I18n.t('views.messages.update_team')
