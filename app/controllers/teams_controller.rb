@@ -15,7 +15,11 @@ class TeamsController < ApplicationController
     @team = Team.new
   end
 
-  def edit; end
+  def edit
+    unless current_user == @team.owner
+      redirect_to team_url(params[:id]), notice: "You have not the right to perform this action"
+    end
+  end
 
   def create
     @team = Team.new(team_params)
