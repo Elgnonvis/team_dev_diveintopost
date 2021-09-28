@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'statics#top'
   get :dashboard, to: 'teams#dashboard'
-
+  get "/make_member_leader/:member_id/:team_id", to: "teams#make_leader", as: "giving_authority"
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

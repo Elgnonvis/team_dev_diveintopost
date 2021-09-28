@@ -273,6 +273,7 @@ en:
       delete: 'Delete'
       create: 'Create'
       invite: 'Invite'
+      make_leader: 'Make leader'
     top:
       line1: 'it is an application to share a specific issue (agenda) easily'
       line2: 'for each member separately for each team or agenda'
