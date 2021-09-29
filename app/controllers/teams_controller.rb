@@ -14,8 +14,12 @@ class TeamsController < ApplicationController
   def new
     @team = Team.new
   end
-
-  def edit; end
+  
+  def edit
+    unless current_user == @team.owner
+      redirect_to team_url(params[:id]), notice: "You have not the right to perform this action"
+    end
+  end
 
   def create
     @team = Team.new(team_params)
@@ -27,6 +31,19 @@ class TeamsController < ApplicationController
       flash.now[:error] = I18n.t('views.messages.failed_to_save_team')
       render :new
     end
+  end
+
+  def make_leader
+    member = User.find(params[:member_id])
+    team = Team.find(params[:team_id])
+    old_leader = User.find(team.owner_id)
+    if current_user == old_leader
+      old_leader.update(keep_team_id: nil)
+      team.update(owner_id: member.id)
+      member.update(keep_team_id: team.id)
+      AuthorityMailer.authority_mail(member, team.name).deliver
+    end
+    redirect_to team_path(team.id), notice:"You successfully change the team leader and you are no more a leader"
   end
 
   def update

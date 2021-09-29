@@ -216,6 +216,7 @@ en:
   views:
     messages:
       create_agenda: 'Successfully created an agenda!'
+      delete_agenda: 'Agenda successfully deleted'
       create_article: 'Successfully created an article!'
       update_article: 'Successfully updated the article!'
       assigned: 'Assigned!'
@@ -249,6 +250,7 @@ en:
       team_build2: 'Create Team'
       select_team: 'Select Team'
       create_agenda: 'Create Agenda'
+      delete_agenda: 'Agenda deleted'
       input_agenda_title: 'Input title'
       input_team_name: 'Input a team name'
       recent_posts: 'Recent Posts'
@@ -256,6 +258,8 @@ en:
       team_members: 'Team Members'
       team_members2: 'Team Members'
       edit_team: 'Edit Team'
+      transfer_authority: 'Transfer Authority'
+      complete_transfer_authority: 'Complete Transfer Authority'
       invite_team_member: 'Invite a team member'
       team_leader: 'Team Leader'
       leader: 'Leader'
@@ -269,6 +273,7 @@ en:
       delete: 'Delete'
       create: 'Create'
       invite: 'Invite'
+      make_leader: 'Make leader'
     top:
       line1: 'it is an application to share a specific issue (agenda) easily'
       line2: 'for each member separately for each team or agenda'
