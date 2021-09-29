@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
   def new
     @team = Team.new
   end
-
+  
   def edit
     unless current_user == @team.owner
       redirect_to team_url(params[:id]), notice: "You have not the right to perform this action"
